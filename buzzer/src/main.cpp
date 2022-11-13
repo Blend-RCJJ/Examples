@@ -1,14 +1,17 @@
 #include <Arduino.h>
 
+int melody = 200;
 const int buzzer = 7;
+int fkng[]={262,263};
 
-void setup() {
-  pinMode(buzzer,OUTPUT);
-  // put your setup code here, to run once:
+void setup(){
+ pinMode(buzzer,OUTPUT);
 }
 
-void loop() {
-  digitalWrite(buzzer,(millis()/10%2));
-
-  // put your main code here, to run repeatedly:
+void loop(){
+  for(int i=0; i<2; i++){
+    tone(buzzer,fkng[i]);
+    delay(1000);
+  }
 }
+
